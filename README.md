@@ -9,12 +9,28 @@ ASP.NET 4.8 image proxy / local-cache service.
 
 See `_lookAtme.md` for coding rules, URL contract and configuration details.
 
-## Quick start
-1. Edit `Web.config` appSettings for your local folders and Azure containers.
-2. Deploy as an IIS application targeting .NET Framework 4.8.
-3. Request images as `/products/logo.png` or `/logos/company.png`.
+## Visual Studio Solution
 
-## Structure
-- `App_Code/` – handler + pure helpers (small single-purpose classes)
-- `Tests/` – NUnit tests for the pure logic
-- `activity/` – session logs (read the latest file for status / next steps)
+Open **`CrystalImageHelper.sln`** in Visual Studio.
+
+```
+CrystalImageHelper.sln
+├── CrystalImageHelper/                 ← Web Application (.NET Framework 4.8)
+│   ├── Handlers/
+│   ├── Models/
+│   ├── Services/
+│   ├── Properties/
+│   ├── Web.config
+│   └── CrystalImageHelper.csproj
+└── CrystalImageHelper.Tests/           ← NUnit test project
+    └── CrystalImageHelper.Tests.csproj
+```
+
+## Quick start
+1. Open `CrystalImageHelper.sln` in Visual Studio.
+2. Edit `CrystalImageHelper/Web.config` appSettings for your local folders and Azure containers.
+3. Build & run (or deploy to IIS targeting .NET Framework 4.8).
+4. Request images as `/products/logo.png` or `/logos/company.png`.
+
+## Activity Log
+All actions are logged under `/activity/`. Read the latest file for status and next steps.
